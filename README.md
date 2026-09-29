@@ -27,3 +27,9 @@
 抖音：gubaobao22 ｜ 微信视频号/今日头条/快手：搜索「老谷拆财报」
 
 个人观点，仅供参考，不构成投资建议。
+
+## 一键安装
+
+```bash
+npx skills add laogu-caibao/laogu-skill-maker
+```
