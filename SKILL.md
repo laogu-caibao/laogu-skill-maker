@@ -1,11 +1,11 @@
 ---
 name: "laogu_skill_maker"
-description: "财经 skill 创作方法论：把'老谷拆财报'16 个 skill 从选题、市场调研、文档写作、数据源实测、冒烟测试到打包发布的完整流水线沉淀为可复用流程，新开窗口做同类 skill 时照着走一遍即可。"
+description: "财经 skill 创作方法论：把'老谷拆财报'21 个 skill 从选题、市场调研、文档写作、数据源实测、冒烟测试到打包发布的完整流水线沉淀为可复用流程，新开窗口做同类 skill 时照着走一遍即可。"
 ---
 
 # Skill 创作工坊
 
-> 功能：把"老谷拆财报"财经 skill 矩阵（16 个）从 0 到发布的完整方法论沉淀为可复用流水线。
+> 功能：把"老谷拆财报"财经 skill 矩阵（21 个）从 0 到发布的完整方法论沉淀为可复用流水线。
 > 下次新开窗口做同类 skill，先读完本文，再动手。
 
 ## 30 秒速览（7 步流水线）
@@ -96,22 +96,34 @@ Operating Rules（诚实纪律，见下）
 - 报告存 `smoke/<slug>.md`：测试时间、方法、每步结论、旧问题回归表、遗留问题
 - 回归测试必须拿到**完整报告**才算数，一句话简报不算通过
 
-## 8. 分享机制规范
+## 8. 分享机制规范（laogu-close v1.0.3 整改版）
 
-- **水印行**：每份输出末尾追加 `—— 老谷拆财报 · {中文名} · {YYYY-MM-DD}`，随复制转发自动携带
-- **钩子句**：水印行前一句，**自带触发说明**，统一格式"回复「分享」，……"（例：回复「分享」，把今日看点转发给一起炒股的朋友）。用户每次看到输出就知道怎么触发，不用事先学习
-- **金句**：分享版第一句必须为 20 字内观点金句（从本篇提炼最有冲击力的判断或数据），这是转发的社交货币
-- **分享版**：用户回复「分享」时，另输出 200 字内压缩版（金句 + 核心结论 + 水印行 + 导流句"视频号/抖音搜索：老谷拆财报"）
-- 助手侧：用户首次使用某 skill 出结果后，主动提一句"回复分享可以生成转发版"；用户说"分享"时可进一步生成带二维码的分享卡片图
+> 教训：laogu-close v1.0.2 曾因 SKILL.md 强制输出分享水印/钩子/导流句，被 SkillHub 以"提示词广告推广"判拒审。以下为整改后规范，旧版"每份输出强制带水印+钩子+导流句"一律废止。
+
+- **日常输出**：不带水印行、不带分享引导、不追加任何导流句
+- **分享版（可选）**：仅在用户主动要求分享（如回复「分享」）时，另输出 200 字内分享版——第一句为 20 字内观点金句（从本篇提炼最有冲击力的判断或数据），再接核心结论与署名行 `—— 老谷拆财报 · {中文名} · {YYYY-MM-DD}`
+- **金句**：分享版第一句必须为 20 字内观点金句，这是转发的社交货币
+- 助手侧：用户首次使用某 skill 出结果后，可提一句"回复「分享」可以生成转发版"；不主动、不强制
 
 ## 9. IP 与出品区
 
-SKILL.md 末尾统一追加出品区：
+SKILL.md 末尾统一追加**文字版**出品区（二维码图片在部分平台刷不出来，已废止）：
 
-- 口号："以数据为刃，剖市场真相"
-- 二维码：`docs/qrcode-shipinhao.jpg`（视频号）、`docs/qrcode-douyin.png`（抖音）
-- 作者声明："个人观点，仅供参考，不构成投资建议"
+```
+## 出品：老谷拆财报
+
+以数据为刃，剖市场真相。
+
+- 抖音：gubaobao22（老谷拆财报）
+- 微信视频号：搜索「老谷拆财报」
+- 今日头条：搜索「老谷拆财报」
+- 快手：搜索「老谷拆财报」
+
+财经科普、财报解读。个人观点，仅供参考，不构成投资建议。
+```
+
 - `icon-512.png`：全矩阵统一用老谷×咪仔方形头像
+- 出品区为纯文字说明，不强制要求输出携带（避免 SkillHub"提示词广告推广"误判）
 
 ## 10. 打包规范
 
@@ -126,7 +138,7 @@ SKILL.md 末尾统一追加出品区：
 
 - `laogu-caibao` 组织下每个 skill 一个**公开**仓库，仓库名 = slug
 - README：中文首行（中文名 + 一句话功能）、功能速览、出品区（口号 + 四平台矩阵 + 声明）
-- **README 必须含"## 一键安装"区**：可复制的仓库链接（代码块）+ `git clone <url>.git` 命令 + ZIP 下载链接（`<url>/archive/refs/heads/main.zip`）+ 导入使用说明（Claude Code 放 `~/.claude/skills/<slug>/`、豆包智能体 / Workbuddy 按平台流程导入、`uvx laogu-mcp` 一次装全 16 个）
+- **README 必须含"## 一键安装"区**：可复制的仓库链接（代码块）+ `git clone <url>.git` 命令 + ZIP 下载链接（`<url>/archive/refs/heads/main.zip`）+ 导入使用说明（Claude Code 放 `~/.claude/skills/<slug>/`、豆包智能体 / Workbuddy 按平台流程导入、`uvx laogu-mcp` 一次装全 21 个）
 - 组织主页（`.github` 仓库）同步更新 skill 一览（新增 skill 后必做）
 - 推送前确认默认分支是 **main**（不是 master）；改名/改内容后重新推送，核验 main 分支实际内容
 
@@ -163,7 +175,7 @@ SKILL.md 末尾统一追加出品区：
 - [ ] MARKET.md（供给/需求/槽点/差异化）
 - [ ] manifest.yaml（版本正确）
 - [ ] icon-512.png（统一头像）
-- [ ] docs/ 两张二维码
+- [ ] 出品区为文字版（口号 + 四平台矩阵文字 + 作者声明），不放二维码图片
 - [ ] README.md（GitHub 用，含"一键安装"区：clone/ZIP/导入 + Coze/Trae 行）
 - [ ] LICENSE（MIT）
 - [ ] dist/<slug>-<version>.zip（unzip -l 核验过；根 SKILL.md + frontmatter + references/ 未压平，Coze/Trae 通用）
@@ -187,9 +199,9 @@ SKILL.md 末尾统一追加出品区：
 - **发布包即通用包，不另打**：Coze 与 Trae 都要求"zip 根目录有 SKILL.md（含 frontmatter）+ references/ 不压平"，现有 `dist/<slug>-<version>.zip` 天然满足（SKILL.md 在根、references/ 完整），一个包同时用于 SkillHub / Coze / Trae
 - **README"一键安装"区必须含 Coze / Trae 行**：
   - 扣子：扣子编程 → 技能面板 → 创建技能 → 本地上传（仓库根目录已有 SKILL.md，直接压缩仓库文件夹即可）；页面要求 `.skill` 后缀时由扣子导入后自动生成，**不要只改 zip 扩展名**
-  - Trae：设置 → 技能 → 上传技能（同上 zip）；或手动放到 `~/.trae/skills/<slug>/`（项目级用 `.trae/skills/<slug>/`，TRAE Work 国区版路径为 `~/.trae-cn/skills/`）；Trae 支持 MCP，把 `uvx laogu-mcp` 配进 MCP 设置即得 16 个工具——skill 负责流程指导、MCP 负责工具调用
+  - Trae：设置 → 技能 → 上传技能（同上 zip）；或手动放到 `~/.trae/skills/<slug>/`（项目级用 `.trae/skills/<slug>/`，TRAE Work 国区版路径为 `~/.trae-cn/skills/`）；Trae 支持 MCP，把 `uvx laogu-mcp` 配进 MCP 设置即得 21 个工具——skill 负责流程指导、MCP 负责工具调用
 - **冒烟测试（每次发版跑）**：
-  1. 结构校验（本地可跑，16 个包全过才算过）：zip 根有 SKILL.md、frontmatter 的 name/description 非空、references/ 未被压平
+  1. 结构校验（本地可跑，21 个包全过才算过）：zip 根有 SKILL.md、frontmatter 的 name/description 非空、references/ 未被压平
   2. GitHub 抽查：仓库 main 分支的 SKILL.md 头部 frontmatter 与本地一致
   3. 真机导入（需用户侧）：Coze 需登录后在技能面板实际上传一次；Trae 需装好 IDE 后实际导入一次——这两项在用户完成前如实标注"待真机验证"，不许声称已测过
 
@@ -199,3 +211,12 @@ SKILL.md 末尾统一追加出品区：
 - **MCP 联动（第 15 节）的配置热更新**：新 skill 若进 `laogu-mcp`，必须在 skill 仓库根目录提供 `mcp-config.json`，schema 见 `laogu-mcp` 仓库的 `config-schema.md`：`skill`（slug）、`config_version`（语义版本，每次改配置必升）、`updated`（YYYY-MM-DD）、`endpoints`（命名 URL 模板，`{param}` 占位）、`symbols`（快照类标的表）、`fallback_order`（降级顺序）、`field_map`（解析字段索引，可覆盖代码默认值）。日常优化只改此文件 → MCP 下次调用自动生效（TTL 缓存 1 小时），零发版；深层解析逻辑变更才需发 MCP 新版。
 - **版本号联动**：改 `mcp-config.json` 必须同步升 `config_version`；MCP 每个 tool 返回的 meta 里带 `config_version` + `config_source`（live/cache/bundled），透明可查。
 - **交付物清单（第 14 节）追加两项**：☐ 质检章节已植入并跑过一遍清单 ☐ mcp-config.json 已建且 MCP 本地热加载冒烟通过。
+
+## 18. 决策质量四件套（新 skill Output Contract 必备，借鉴 ai-berkshire）
+
+> 来源：xbtlin/ai-berkshire（MIT，16,564 star）方法论，文案自研、只借鉴框架。散户缺的不是更多信息，而是"敢下判断 + 敢认错"的决策纪律。
+
+1. **强制三档结论**：Output Contract 必须要求结论分三档输出，不许"一方面…另一方面…"打太极。个股/基金类用"值得跟踪 / 保持观望 / 提示风险"；测温类用"过热 / 中性 / 冰冷"；回检类用"成立 / 部分成立 / 被证伪"。每档必须附 1-2 句逻辑依据，并声明"个人观点，仅供参考，不构成投资建议"。
+2. **反偏见清单**：Output Contract 末尾附 4-6 条自查项，输出前逐条过一遍。通用项：确认偏误（是否只找了支持证据）、近因效应（是否被最近一周走势带偏）、幸存者偏差（样本是否只剩活下来的）、锚定效应（是否被某个价格/数字锚定）；各 skill 按场景增补（如选股加"只看 PE 陷阱"、情绪加"把相关当因果"）。
+3. **投资论文追踪**：凡输出"判断/观点"的 skill，必须同时记录"关键假设 + 证伪条件"（见 laogu-thesis 的建档模板），到期回检。把"认错机制"写进流程，而不是只写进文案。
+4. **双源交叉验证**：关键数字（价格、涨跌幅、财务数据）必须双源交叉，误差超过阈值（默认 1%）必须告警并标注"未核验"，不许静默采用单源数字。单源数据必须标注来源。
