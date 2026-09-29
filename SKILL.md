@@ -1,5 +1,7 @@
 ---
 name: "laogu_skill_maker"
+slug: "laogu-skill-maker"
+displayName: "Skill 创作工坊"
 description: "财经 skill 创作方法论：把'老谷拆财报'21 个 skill 从选题、市场调研、文档写作、数据源实测、冒烟测试到打包发布的完整流水线沉淀为可复用流程，新开窗口做同类 skill 时照着走一遍即可。"
 ---
 
