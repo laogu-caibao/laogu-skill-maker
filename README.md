@@ -20,6 +20,25 @@
 - 分享：日常输出无水印无引导；用户主动回复「分享」时才输出 200 字分享版（金句+核心结论+署名行）。旧版强制水印/钩子/导流句已废止（SkillHub"提示词广告推广"拒审教训，见 SKILL.md §8）
 - 质量门：市场调研先行，冒烟测试修→测循环到零阻塞问题
 
+## English
+
+**laogu-skill-maker — Skill factory.** The complete methodology behind 21 finance skills: topic selection, market research, SKILL.md authoring, data-source verification, smoke testing, packaging and publishing — a reusable 7-step pipeline. Install: `npx skills add laogu-caibao/laogu-skill-maker`.
+
+## FAQ
+
+**Q：laogu-skill-maker 有什么用？**
+适合的场景：想做出和「老谷拆财报」同款的财经 AI skill，需要一条从选题到发布、踩过坑的完整流水线。
+
+**Q：数据可靠吗？会荐股吗？**
+数字必须来自可核验的公开来源（上市公司公告、交易所公开数据、公开网页），取不到就标「未核验」，绝不编造；只做结构化整理与解读，不构成投资建议。
+
+**Q：怎么安装？支持哪些 AI 平台？**
+```bash
+npx skills add laogu-caibao/laogu-skill-maker
+```
+平台中立 Markdown，Claude Code、Codex、豆包智能体、Workbuddy、扣子 Coze、Trae 等环境均可用；数据能力可用 [laogu-mcp](https://github.com/laogu-caibao/laogu-mcp)（`uvx laogu-mcp`）一次装齐。更多 skill 见[老谷拆财报组织主页](https://github.com/laogu-caibao)。
+---
+
 ## 出品
 
 老谷拆财报 · 以数据为刃，剖市场真相
