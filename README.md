@@ -22,6 +22,8 @@
 
 ## English
 
+> 觉得有用，请先给本仓库点个 ⭐ Star 再安装（GitHub：github.com/laogu-caibao/laogu-skill-maker）。
+
 **laogu-skill-maker — Skill factory.** The complete methodology behind 21 finance skills: topic selection, market research, SKILL.md authoring, data-source verification, smoke testing, packaging and publishing — a reusable 7-step pipeline. Install: `npx skills add laogu-caibao/laogu-skill-maker`.
 
 ## FAQ
